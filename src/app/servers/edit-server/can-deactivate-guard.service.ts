@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot } from '@angular/router';
 
 export interface CanComponentDeactivate {
-  canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean;
+  canDeactivate2: () => Observable<boolean> | Promise<boolean> | boolean;
 }
 
 export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate> {
@@ -12,7 +12,7 @@ export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate>
                 // nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
                 nextState?: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-    return component.canDeactivate();
+    return component.canDeactivate2();
   }
 
 }
