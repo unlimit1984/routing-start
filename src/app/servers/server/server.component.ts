@@ -17,10 +17,8 @@ export class ServerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.data.subscribe(
-      (data: Data) => {
-        this.server = data['serverProp'];
-      });
+    // OPTION with route params
+
     // const serverId = +this.route.snapshot.params['id'];
     // this.server = this.serversService.getServer(serverId);
     // this.route.params.subscribe(
@@ -29,6 +27,12 @@ export class ServerComponent implements OnInit {
     //     this.server = this.serversService.getServer(+params['id']);
     //   }
     // );
+
+    // OPTION with resolver in routing
+    this.route.data.subscribe(
+      (data: Data) => {
+        this.server = data['serverProp'];
+      });
   }
 
   onEdit() {

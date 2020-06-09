@@ -14,6 +14,8 @@ export class ErrorPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    // OPTION with static data in routing
+
     // this.errorMessage = this.route.snapshot.data['message'];
     this.route.data.subscribe(
       (data: Data) => {
